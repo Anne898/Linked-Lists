@@ -21,6 +21,7 @@ namespace Linked_Lists
 
         LinkedList<string> elevador = new LinkedList<string>(new string[] { "Piso 1", "Piso 2", "Piso 3" });
 
+
         private void DisplayWelcomeMessage()
         { //mensaje de bienvenida
             System.Console.WriteLine("Elevador");
@@ -97,16 +98,16 @@ namespace Linked_Lists
                 switch (selectedOption)
                 {
 
-                    case 1:
+                    case 2:
 
-                        elevador.Remove(elevador.First);
+                        elevador.Remove(elevador.Last);
 
                         foreach (string i in elevador)
                         {
                             Console.WriteLine(i);
                         }
-                        
-                        Console.WriteLine("LLegaste al piso 2");
+
+                        Console.WriteLine("LLegaste al piso 3");
 
 
                         break;
@@ -117,7 +118,7 @@ namespace Linked_Lists
                         {
                             Console.WriteLine(i);
                         }
-            
+
 
                         Console.WriteLine("LLegaste al piso 3");
 
@@ -141,7 +142,7 @@ namespace Linked_Lists
         private void Pisos2()
         {
 
-              int selectedOption = 0;
+            int selectedOption = 0;
 
             while (selectedOption != GO_BACK_OPTION)
             {
@@ -152,15 +153,15 @@ namespace Linked_Lists
                 {
 
                     case 1:
+                         elevador.Remove(elevador.Last);
+                         elevador.Reverse();
 
-                        elevador.Remove(elevador.Last);
-
-                        foreach (string i in elevador)
+                        foreach (string i in  elevador.Reverse())
                         {
                             Console.WriteLine(i);
                         }
-                        
-                        Console.WriteLine("LLegaste al piso 2");
+
+                        Console.WriteLine("LLegaste al piso 1");
 
 
                         break;
@@ -174,7 +175,7 @@ namespace Linked_Lists
                         {
                             Console.WriteLine(i);
                         }
-            
+
 
                         Console.WriteLine("LLegaste al piso 3");
 
@@ -196,7 +197,7 @@ namespace Linked_Lists
         private void Pisos3()
         {
 
-        int selectedOption = 0;
+            int selectedOption = 0;
 
             while (selectedOption != GO_BACK_OPTION)
             {
@@ -208,31 +209,30 @@ namespace Linked_Lists
 
                     case 1:
 
-                       elevador.Reverse();
-                       
-                        foreach (string i in elevador)
+                        elevador.Reverse();
+
+                        foreach (string i in elevador.Reverse())
                         {
                             Console.WriteLine(i);
                         }
-                        
-                        Console.WriteLine("LLegaste al piso 2");
 
+                        Console.WriteLine("LLegaste al piso 1");
 
                         break;
+
+
 
                     case 2:
 
                         elevador.Remove(elevador.First);
                         elevador.Reverse();
 
-                        foreach (string i in elevador)
+                        foreach (string i in elevador.Reverse())
                         {
                             Console.WriteLine(i);
                         }
-            
 
-                        Console.WriteLine("LLegaste al piso 3");
-
+                        Console.WriteLine("LLegaste al piso 2");
 
                         break;
 
@@ -285,5 +285,6 @@ namespace Linked_Lists
             DisplayByeMessage();
 
         }
+
     }
 }
